@@ -286,6 +286,7 @@ void createGameTable() {
 
 int main() {
     char input;
+    cout <<"Bataille navale C++ by Max21910";
 	cout <<"Demarer le jeux avec la touche P";
 	cin >> input;
 	if (input == 'P')
