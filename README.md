@@ -20,8 +20,9 @@ Place_Fire() controls the turn-based firing mechanism and determines the winner.
 createGameTable() initializes the game grids.
 Usage
 To run the game:
-```
+
 # Compile the code
+```
 g++ main.cpp -o BatailleNavale
 ```
 # Run the compiled code
