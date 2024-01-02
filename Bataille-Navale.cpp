@@ -285,10 +285,15 @@ void createGameTable() {
 }
 
 int main() {
-    createGameTable();
-    printNavireA();
-    input_playerA();
-    input_playerB();
+    char input;
+	cout <<"Demarer le jeux avec la touche P";
+	cin >> input;
+	if (input == 'P')
+	{
+    	createGameTable();
+    	printNavireA();
+    	input_playerA();
+    	input_playerB();
     /*  verification placement de bateaux
     cout << "\n";
     cout << "joueur A:\n";
@@ -297,5 +302,10 @@ int main() {
     cout << "joueur B:\n";
     printNavireB();
      */
-    Place_Fire();
+    	Place_Fire();
+    }
+    else 
+    {
+    	return 0;
+    }
 }
