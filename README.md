@@ -1,4 +1,4 @@
-Bataille Navale Game in C++
+## Bataille Navale Game in C++
 This is a console-based Bataille Navale (Battleship) game implemented in C++.
 
 Overview
