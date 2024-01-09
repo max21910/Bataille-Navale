@@ -1,6 +1,6 @@
 ## Bataille Navale Game in C++
 This is a console-based Bataille Navale (Battleship) game implemented in C++.
-
+(this is a school project)
 Overview
 This program simulates a two-player Battleship game where players place their ships on an 8x8 grid and take turns to guess and attack each other's ships.
 
@@ -23,7 +23,7 @@ To run the game:
 
 # Compile the code
 ```
-g++ main.cpp -o BatailleNavale
+g++ Bataille-Navale.cpp -o BatailleNavale
 ```
 # Run the compiled code
 ```

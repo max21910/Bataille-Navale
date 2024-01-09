@@ -11,10 +11,10 @@ char point = 46; //"." point ASCII
 char ship = 88; // "X" ASCII
 char miss_Shoot = 74; //"J" ASCII
 char Shoot = 84; //"T" ASCII
-char firstrow;
-int firstligne;
-int coupA = 0;
-int coupB = 0;
+char firstrow; //input row
+int firstligne; //input line
+int coupA = 0; //number of play
+int coupB = 0; //number of play
 int numberBoat = 4; //4 bateaux max 1 X = 1 bateaux
 
 void printNavireA() {
@@ -23,9 +23,7 @@ void printNavireA() {
     for (int Number = 0; Number < 8; Number++) {
         cout << Number + 1 << " "; 
         for (int ligne = 0; ligne < 8; ligne++)
-        {
             cout << NavireA[Number][ligne] << "  ";
-        }
          cout << "\n"; //return line.
     }
 }
@@ -37,9 +35,7 @@ void printNavireB() {
     {
         cout << Number + 1 << " "; 
         for (int ligne = 0; ligne < 8; ligne++)
-        {
             cout << NavireB[Number][ligne] << "  ";
-        }
         cout << "\n"; //return line.
     }
 }
@@ -52,9 +48,7 @@ void printshootA() {
     for (int Number = 0; Number < 8; Number++) {
         cout << Number + 1 << " "; 
         for (int ligne = 0; ligne < 8; ligne++)
-        {
             cout << JoueurA[Number][ligne] << "  ";
-        }
          cout << "\n"; //return line.
     }
 }
@@ -67,9 +61,7 @@ void printshootB() {
     for (int Number = 0; Number < 8; Number++) {
         cout << Number + 1 << " "; 
         for (int ligne = 0; ligne < 8; ligne++)
-        {
             cout << JoueurB[Number][ligne] << "  ";
-        }
          cout << "\n"; //return line.
     }
 }
@@ -176,10 +168,10 @@ void checkwinner() {
         }
     }
     if (hitA == 4) {   //il y a 4 bateaux max par joueur car 1 bateaux = 1X donc si il y a 4 touche il ne reste plus de bateaux
-        cout << "Le joueur A a gagné! en " << hitA << " coups gagnants et " << coupA +1 << " coups au total \n"; //ajout de 1 pour prende en compte le dernier coup jouer
+        cout << "Le joueur B a gagné! en " << hitA << " coups gagnants et " << coupA +1 << " coups au total \n"; //ajout de 1 pour prende en compte le dernier coup jouer
         exit(0); //stop the program 
     } else if (hitB == 4) {
-        cout << "Le joueur B a gagné! en " << hitB << " coups gagnants et " << coupB +1<< " coups au total \n"; //ajout de 1 pour prende en compte le dernier coup jouer
+        cout << "Le joueur A a gagné! en " << hitB << " coups gagnants et " << coupB +1<< " coups au total \n"; //ajout de 1 pour prende en compte le dernier coup jouer
         exit(0); //stop the program 
     }
 }
@@ -218,15 +210,15 @@ void Place_Fire()
                         } 
                         else 
                         {
-                            cout << "Erreur: Veuillez saisir une ligne valide entre 1 et 8.\n";
+                            cout << "Erreur: Veuillez saisir une ligne valide entre 1 et 8.\n"; //retry as the input is wrong
                         }   
                     } 
                     else
                     {
-                        cout << "Erreur: Veuillez saisir une case entre A et H.\n";
+                        cout << "Erreur: Veuillez saisir une case entre A et H.\n"; //retry as the input is wrong
                     }
-                    printshootA();
-                    checkwinner();
+                    printshootA(); //print shoot 
+                    checkwinner(); //check winner
                 }
             }
         cout << "Au tour du Joueur B:\n";
@@ -255,24 +247,24 @@ void Place_Fire()
                         {
                             JoueurB[firstligne][firstrow] = miss_Shoot;
                         }
-                        validInput = true;
+                        validInput = true; //the input is correct so the code continue
                     } 
                     else
                     {
-                        cout << "Erreur: Veuillez saisir une ligne valide entre 1 et 8.\n";
+                        cout << "Erreur: Veuillez saisir une ligne valide entre 1 et 8.\n"; //retry as the input is wrong
                     }
                 } 
                 else
                 {
-                    cout << "Erreur: Veuillez saisir une case entre A et H.\n";
+                    cout << "Erreur: Veuillez saisir une case entre A et H.\n"; //retry as the input is wrong
                 }
-                printshootB();
-                checkwinner();
+                printshootB(); //print shoot
+                checkwinner(); //check winner
             }
         }
     }
 }
-
+//initialisation des tableaux :
 void createGameTable() {
     for (int i = 0; i < 8; i++) {
         for (int j = 0; j < 8; j++) {
@@ -295,18 +287,10 @@ int main() {
     	printNavireA();
     	input_playerA();
     	input_playerB();
-    /*  verification placement de bateaux
-    cout << "\n";
-    cout << "joueur A:\n";
-    printNavireA();
-    cout << "\n";
-    cout << "joueur B:\n";
-    printNavireB();
-     */
     	Place_Fire();
     }
     else 
     {
-    	return 0;
-    }
+    	return 0; //wrong or no input stop the programe 
+    }	//tricks to bypass Github fail compilation (loop)
 }
