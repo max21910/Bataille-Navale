@@ -1,21 +1,21 @@
-//DM Programme bataille navale c++ Maxime Dupont-Jourdan CIEL 1
+//DM Programme bataille navale c++
 //save in github :https://github.com/max21910/Bataille-Navale
 #include <iostream>
 using namespace std;
 
-char NavireA[8][8]; //placement navire A
-char NavireB[8][8]; //placement navire B
-char JoueurA[8][8]; //coup jouer A
-char JoueurB[8][8]; //coup jouer B
-char point = 46; //"." point ASCII
-char ship = 88; // "X" ASCII
-char miss_Shoot = 74; //"J" ASCII
-char Shoot = 84; //"T" ASCII
-char firstrow; //input row
-int firstligne; //input line
-int coupA = 0; //number of play
-int coupB = 0; //number of play
-int numberBoat = 4; //4 bateaux max 1 X = 1 bateaux
+char NavireA[8][8]; 	//placement navire A
+char NavireB[8][8];	 	//placement navire B
+char JoueurA[8][8]; 	//coup jouer A
+char JoueurB[8][8]; 	//coup jouer B
+char point = 46; 		//"." point ASCII
+char ship = 88; 		// "X" ASCII
+char miss_Shoot = 74; 	//"J" ASCII
+char Shoot = 84;	 	//"T" ASCII
+char firstrow; 			//input row
+int firstligne; 		//input line
+int coupA = 0; 			//number of play
+int coupB = 0; 			//number of play
+int numberBoat = 4; 	//4 bateaux max 1 X = 1 bateaux
 
 void printNavireA() {
     cout << "Bataille navale\n";
@@ -169,10 +169,10 @@ void checkwinner() {
     }
     if (hitA == 4) {   //il y a 4 bateaux max par joueur car 1 bateaux = 1X donc si il y a 4 touche il ne reste plus de bateaux
         cout << "Le joueur B a gagné! en " << hitA << " coups gagnants et " << coupA +1 << " coups au total \n"; //ajout de 1 pour prende en compte le dernier coup jouer
-        exit(0); //stop the program 
+        exit(0); //stop the program if a player win
     } else if (hitB == 4) {
         cout << "Le joueur A a gagné! en " << hitB << " coups gagnants et " << coupB +1<< " coups au total \n"; //ajout de 1 pour prende en compte le dernier coup jouer
-        exit(0); //stop the program 
+        exit(0); //stop the program if a player win
     }
 }
 
@@ -264,7 +264,7 @@ void Place_Fire()
         }
     }
 }
-//initialisation des tableaux :
+//initialisation des tableaux with point inside :
 void createGameTable() {
     for (int i = 0; i < 8; i++) {
         for (int j = 0; j < 8; j++) {
