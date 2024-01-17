@@ -3,8 +3,8 @@ This is a console-based Bataille Navale (Battleship) game implemented in C++.
 (this is a school project)
 Overview
 This program simulates a two-player Battleship game where players place their ships on an 8x8 grid and take turns to guess and attack each other's ships.
-<img src="img/1.jpg" width="100" height="100">
-<img src="img/2.jpg">
+<img src="img/1.jpg" width="500" height="500">
+<img src="img/2.jpg" width="500" height="500">
 ## Gameplay
 -Players input the positions of their ships by specifying the column (A-H) and row (1-8).
 
